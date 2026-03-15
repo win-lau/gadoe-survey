@@ -12,6 +12,12 @@ df["percent_housing_concern"] = df["housing_concern_count"] / df["total_students
 df["school"] = df["file"].str.replace("761 - ", "", regex=False)
 df["school"] = df["school"].str.replace(".xls", "", regex=False)
 
+# clean up school names
+df["school"] = df["school"].str.replace("_Charter_", "(Charter)", regex=False)
+df["school"] = df["school"].str.replace("Women_s", "Women's", regex=False)
+
 df = df[["school", "file", "housing_concern_count", "total_students", "percent_housing_concern"]]
+
+df = df.sort_values("school")
 
 df.to_csv("results/final_housing_data.csv", index=False)
