@@ -69,9 +69,7 @@ def process_files(urls, year):
     kept, ignored, mentions = [], [], []
 
     allowed_schools = [
-        "Sylvan Hills Middle School",
-        "Carver High School Early College",
-        "Carver High School"
+        "Judson Price Middle School"
     ]
 
     for url in urls:

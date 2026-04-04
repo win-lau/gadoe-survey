@@ -10,6 +10,7 @@ results = []
 for file in os.listdir(DATA_DIR):
 
     if file.endswith(".xls") and (
+    "Judson Price Middle School" in file or
     "Sylvan Hills Middle School" in file or
     "Carver High School" in file):
 
